@@ -2,11 +2,8 @@
     <div class="logo-box">
         <a href="#"  id="sidebar-close">
             <i class="material-icons">close</i>
-        </a> <a href="#" id="sidebar-state">
-            <i class="material-icons">adjust</i>
-            <i class="material-icons compact-sidebar-icon">panorama_fish_eye</i>
         </a>
-</div>
+    </div>
     <div class="page-sidebar-inner slimscroll">
         <ul class="accordion-menu">
             <li class="sidebar-title">
@@ -15,94 +12,73 @@
             <li class="active-page">
                 <a href="index.html" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
             </li>
-
-
             <li>
-                <a href="#"><i class="material-icons">apps</i>Service Providers<i
+                <a href="#"><i class="material-icons">apps</i>Donators<i class="material-icons has-sub-menu">add</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="">Create New</a>
+                    </li>
+                    <li>
+                        <a href="">View Donators</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="material-icons">apps</i>Donations<i class="material-icons has-sub-menu">add</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="">Create New</a>
+                    </li>
+                    <li>
+                        <a href="">Manage Donations</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="material-icons">input</i>Issuers<i
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
                         <a href="">Create New</a>
                     </li>
                     <li>
-                        <a href="">Service Providers</a>
+                        <a href="">Manage Issuers</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="material-icons">calendar_today</i> Meetings<i
-                        class="material-icons has-sub-menu">add</i></a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="">Manage Meetings</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="material-icons">input</i>Categories<i
+                <a href="#"><i class="material-icons">bookmark_border</i>Issues<i
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
                         <a href="">Create New</a>
                     </li>
                     <li>
-                        <a href="">Manage Categories</a>
+                        <a href="">Manage Issues</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="material-icons">bookmark_border</i>Sub Categories<i
+                <a href="#"><i class="material-icons">access_time</i>Products<i
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
                         <a href="">Create New</a>
                     </li>
                     <li>
-                        <a href="">Manage Categories</a>
+                        <a href="">Manage Products</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="material-icons">access_time</i>Time Slots<i
+                <a href="#"><i class="material-icons">map</i>Inventory<i
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
                         <a href="">Create New</a>
                     </li>
                     <li>
-                        <a href="">Manage Slots</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="material-icons">map</i>Locations<i
-                        class="material-icons has-sub-menu">add</i></a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="">Create New</a>
-                    </li>
-                    <li>
-                        <a href="">Manage Locations</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="material-icons">payments</i>Payments<i
-                        class="material-icons has-sub-menu">add</i></a>
-                <ul class="sub-menu">
-
-                    <li>
-                        <a href="">Manage Payments</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="material-icons">bar_chart</i>Reports<i
-                        class="material-icons has-sub-menu">add</i></a>
-                <ul class="sub-menu">
-
-                    <li>
-                        <a href="">Generate Reports</a>
+                        <a href="">Manage Inventory</a>
                     </li>
                 </ul>
             </li>

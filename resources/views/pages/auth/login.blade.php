@@ -9,7 +9,7 @@
                             <form method="post" action="{{ route('login') }}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="username" value="{{ old('username') }}"
+                                    <input type="text" class="form-control" name="email" value="{{ old('username') }}"
                                         placeholder="Username" required="required" autofocus>
                                 </div>
                                 <div class="form-group">

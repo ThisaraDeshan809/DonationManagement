@@ -13,3 +13,4 @@
   <script src="{{ asset('assets/plugins/flot/jquery.flot.tooltip.min.js') }}"></script>
   <script src="{{ asset('assets/js/connect.min.js') }}"></script>
   <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

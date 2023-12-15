@@ -5,19 +5,23 @@
         </button>
         <ul class="navbar-nav">
             <li class="nav-item small-screens-sidebar-link">
-                <a href="#" class="nav-link"><i class="material-icons-outlined">menu</i></a>
+                <a href="#" class="nav-link">
+                    <i class="material-icons-outlined">menu</i>
+                </a>
             </li>
             <li class="nav-item nav-profile dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="{{ asset('assets/images/profile-image-1.png') }}" alt="profile image">
-                    <span> @auth
-                        {{ auth()->user()->name }} @endauth
-                    </span><i class="material-icons dropdown-icon">keyboard_arrow_down</i>
+                    <span>
+                    @auth
+                        {{ Auth::user()->name }}
+                    @endauth
+                    </span>
+                    <i class="material-icons dropdown-icon">keyboard_arrow_down</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     @auth
-                        <a class="dropdown-item" href="{{ route('logout') }}">Log out</a>
+                        <a class="dropdown-item" href="">Log out</a>
                     @endauth
                 </div>
             </li>

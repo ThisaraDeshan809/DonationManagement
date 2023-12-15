@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -31,30 +32,46 @@ class AuthController extends Controller
                 /** @var User $user */
                 $user = Auth::user();
                 $token = $user->createToken('app')->accessToken;
-                return view('pages.home');
+                if($user->role_id == 1)
+                {
+                    Session::flash('success', 'Successfully logged in');
+                    return view('pages.home');
+                } elseif($user->role_id == 2) {
+                    Session::flash('success', 'Successfully logged in');
+                    return view('pages.home');
+                } else {
+                    Session::flash('success', 'Successfully logged in');
+                    return view('pages.home');
+                }
+
             }
+            Session::flash('fail', 'Credentials are Wrong! Please try again');
+            return redirect(route('login.View'));
         } catch (\Exception $e) {
             return response([
                 'message' => $e->getMessage()
             ]);
         }
-        return response([
-            'error' => 'invalid UserName/Password'
-        ]);
     }
 
     public function register(RegisterRequest $request)
     {
         try
         {
-            User::create([
+            $result = User::create([
                 'first_name' => $request->input('first_name'),
                 'last_name'=> $request->input('last_name'),
                 'role_id' => $request->input('role'),
                 'email'=> $request->input('email'),
                 'password' => Hash::make($request->input('password'))
             ]);
-            return view('pages.home');
+            if ($result) {
+                session()->flash('success', 'User registration successful');
+                return view('pages.home');
+            }
+            session()->flash('fail', 'User registration failed');
+            return redirect()->back();
+
         } catch (\Exception $e) {
             return response([
                 'message'=> 'Error'. $e->getMessage()
