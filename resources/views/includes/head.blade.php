@@ -4,22 +4,15 @@
 <meta name="description" content="Staane Dashbaord">
 <meta name="keywords" content="admin,dashboard">
 <meta name="author" content="stacks">
-<!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<!-- Title -->
-<title>Staane - Admin Dashboard</title>
+<title>Donation Manager</title>
 
-<!-- Styles -->
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
-<link
-    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-    rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
 <link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/plugins/font-awesome/css/all.min.css') }}" rel="stylesheet">
 
-
-<!-- Theme Styles -->
 <link href="{{ asset('assets/css/connect.min.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/css/admin3.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/css/dark_theme.css') }}" rel="stylesheet">

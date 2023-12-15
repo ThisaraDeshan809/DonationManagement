@@ -1,8 +1,12 @@
 <div class="page-sidebar">
-    <div class="logo-box"><img src="{{ asset('assets/images/logo/staane_logo.png') }}" width="80%"><a href="#"
-            id="sidebar-close"><i class="material-icons">close</i></a> <a href="#" id="sidebar-state"><i
-                class="material-icons">adjust</i><i class="material-icons compact-sidebar-icon">panorama_fish_eye</i></a>
-    </div>
+    <div class="logo-box">
+        <a href="#"  id="sidebar-close">
+            <i class="material-icons">close</i>
+        </a> <a href="#" id="sidebar-state">
+            <i class="material-icons">adjust</i>
+            <i class="material-icons compact-sidebar-icon">panorama_fish_eye</i>
+        </a>
+</div>
     <div class="page-sidebar-inner slimscroll">
         <ul class="accordion-menu">
             <li class="sidebar-title">
@@ -29,9 +33,6 @@
                 <a href="#"><i class="material-icons">calendar_today</i> Meetings<i
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
-                    {{-- <li>
-                        <a href="">Create New</a>
-                    </li> --}}
                     <li>
                         <a href="">Manage Meetings</a>
                     </li>
@@ -42,7 +43,7 @@
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="{{ route('category.new') }}">Create New</a>
+                        <a href="">Create New</a>
                     </li>
                     <li>
                         <a href="">Manage Categories</a>
