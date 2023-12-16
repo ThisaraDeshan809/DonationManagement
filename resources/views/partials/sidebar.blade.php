@@ -16,10 +16,7 @@
                 <a href="#"><i class="material-icons">apps</i>Donators<i class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">Create New</a>
-                    </li>
-                    <li>
-                        <a href="">View Donators</a>
+                        <a href="{{route('Donator.index')}}">Manage Donators</a>
                     </li>
                 </ul>
             </li>
@@ -27,10 +24,10 @@
                 <a href="#"><i class="material-icons">apps</i>Donations<i class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">Create New</a>
+                        <a href="{{route('Donation.New')}}">Create New</a>
                     </li>
                     <li>
-                        <a href="">Manage Donations</a>
+                        <a href="{{route('Donation.Index')}}">Manage Donations</a>
                     </li>
                 </ul>
             </li>
