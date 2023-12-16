@@ -44,16 +44,15 @@ class DonationController extends Controller
             ];
             $data3 = [
                 'product_id' => $request->product_id,
-                'quantity' => $request->amount
+                'quantity' => Inventory::where('id',$request->product_id)->first()->quantity+$request->amount
             ];
             $result2 = Donator::create($data2);
-            $result3 = Inventory::create($data3);
+            $result3 = Inventory::findOrFail($request->product_id)->update($data3);
             $data = [
                 'user_id' => $request->user_id,
                 'product_id' => $request->product_id,
                 'amount' => $request->amount,
                 'donation_time' => $request->date,
-                'inventory_id' => $result3->id,
                 'donator_id' => $result2->id,
             ];
             $result = Donation::create($data);
