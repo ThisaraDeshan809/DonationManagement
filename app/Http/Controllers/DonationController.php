@@ -77,14 +77,23 @@ class DonationController extends Controller
                 'last_name' => User::where('id', $request->user_id)->first()->last_name,
                 'email' => User::where('id', $request->user_id)->first()->email,
             ];
+            $previousQuantity = Donation::where('id',$id)->first()->amount;
+            if($request->amount > $previousQuantity)
+            {
+                $quantity = Inventory::where('id',$request->product_id)->first()->quantity + ($request->amount-$previousQuantity);
+            } elseif($request->amount == $previousQuantity){
+                $quantity = $previousQuantity;
+            } else {
+                $quantity = Inventory::where('id',$request->product_id)->first()->quantity - ($previousQuantity-$request->amount);
+            }
+            // dd($previousQuantity);
             $data3 = [
                 'product_id' => $request->product_id,
-                'quantity' => $request->amount
+                'quantity' => $quantity
             ];
             $donator_id = Donation::findOrFail($id)->donator_id;
-            $inventory_id = Donation::findOrFail($id)->inventory_id;
             $result2 = Donator::findOrFail($donator_id)->update($data2);
-            $result3 = Inventory::findOrFail($inventory_id)->update($data3);
+            $result3 = Inventory::findOrFail($request->product_id)->update($data3);
             $data = [
                 'user_id' => $request->user_id,
                 'product_id' => $request->product_id,
