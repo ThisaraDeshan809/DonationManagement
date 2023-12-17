@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\DonatorController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\IssueController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('login','loginView')->name('login.View');
     Route::post('register','register')->name('Register');
     Route::get('register','registerView')->name('Register.View');
+    Route::get('dashboard','home')->name('Dashboard')->middleware('auth:api');
 });
 
 Route::controller(DonationController::class)->group(function() {
@@ -59,4 +61,8 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('ProductUpdate/{id}','updateView')->name('Product.Update.View');
     Route::post('ProductUpdate/{id}','update')->name('Product.Update');
     Route::get('ProductDelete/{id}','delete')->name('Product.Delete');
+});
+
+Route::controller(InventoryController::class)->group(function() {
+    Route::get('InventoryIndex','index')->name('Inventory.Index');
 });

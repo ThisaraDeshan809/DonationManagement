@@ -10,7 +10,7 @@
                 Apps
             </li>
             <li class="active-page">
-                <a href="index.html" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
+                <a href="{{route('Dashboard')}}" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="material-icons">apps</i>Donators<i class="material-icons has-sub-menu">add</i></a>
@@ -69,7 +69,7 @@
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">Manage Inventory</a>
+                        <a href="{{route('Inventory.Index')}}">View Inventory</a>
                     </li>
                 </ul>
             </li>
