@@ -15,4 +15,14 @@ class Issue extends Model
         'amount',
         'issue_date'
     ];
+
+    public function Issuers()
+    {
+        return $this->belongsTo(Issuer::class, 'issuer_id');
+    }
+
+    public function Products()
+    {
+        return $this->belongsTo(Product::class, 'product_id');
+    }
 }

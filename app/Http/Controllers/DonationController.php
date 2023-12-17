@@ -99,7 +99,7 @@ class DonationController extends Controller
     {
         try {
             $inventory_id = Donation::findOrFail($id)->product_id;
-            $inventoryQuantity = Inventory::where('id',$inventory_id)->first()->quantity - Donation::findOrFail($id)->quantity;
+            $inventoryQuantity = Inventory::where('id',$inventory_id)->first()->quantity - Donation::findOrFail($id)->amount;
             $data = [
                 'product_id' => $inventory_id,
                 'quantity' => $inventoryQuantity

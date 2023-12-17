@@ -18,7 +18,7 @@
                 <div class="card">
                     <div class="card-header">Create Issue</div>
                     <div class="card-body mt-5">
-                        <form method="POST" action="{{ route('Donation.store') }}">
+                        <form method="POST" action="{{ route('Issue.Store') }}">
                             @csrf
                             <div class="form-group row">
                                 <label for="issuer_id" class="col-md-4 col-form-label text-md-right">Issue From</label>

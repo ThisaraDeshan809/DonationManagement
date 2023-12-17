@@ -44,4 +44,9 @@ Route::controller(DonatorController::class)->group(function() {
 
 Route::controller(IssueController::class)->group(function () {
     Route::get('NewIssue','newIssueView')->name('Issue.New');
+    Route::get('IssueIndex','index')->name('Issue.Index');
+    Route::post('IssueStore','store')->name('Issue.Store');
+    Route::get('IssueUpdate/{id}','updateView')->name('Issue.Update.View');
+    Route::post('IssueUpdate/{id}','update')->name('Issue.Update');
+    Route::get('IsuueDelete/{id}','delete')->name('Issue.Delete');
 });
