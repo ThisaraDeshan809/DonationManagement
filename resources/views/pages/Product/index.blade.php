@@ -10,21 +10,19 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Issuer Name</th>
                             <th>Product Name</th>
-                            <th>Amount</th>
+                            <th>Description</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($issues as $issue )
+                        @foreach ($products as $product )
                         <tr>
-                            <td>{{$issue->Issuers->first_name}}</td>
-                            <td>{{$issue->Products->name}}</td>
-                            <td>{{$issue->amount}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->description}}</td>
                             <td>
-                                <a href="{{route('Issue.Update.View',$issue->id)}}" class="btn btn-success btn-sm m-1">Update</a>
-                                <a href="{{route('Issue.Delete',$issue->id)}}" class="btn btn-danger btn-sm m-1">Delete</a>
+                                <a href="{{route('Product.Update.View',$product->id)}}" class="btn btn-success btn-sm m-1">Update</a>
+                                <a href="{{route('Product.Delete',$product->id)}}" class="btn btn-danger btn-sm m-1">Delete</a>
                             </td>
                         </tr>
                         @endforeach

@@ -7,7 +7,6 @@ use App\Models\Donation;
 use App\Models\Donator;
 use App\Models\Inventory;
 use App\Models\Product;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class DonationController extends Controller
@@ -33,7 +32,7 @@ class DonationController extends Controller
         return view('pages.Donator.New&Update',compact('products', 'donators'));
     }
 
-    public function store(Request $request)
+    public function store(DonateRequest $request)
     {
         try {
             $data3 = [
@@ -60,7 +59,7 @@ class DonationController extends Controller
         }
     }
 
-    public function update(Request $request , $id)
+    public function update(DonateRequest $request , $id)
     {
         try {
             $previousQuantity = Donation::where('id',$id)->first()->amount;
@@ -100,7 +99,7 @@ class DonationController extends Controller
     {
         try {
             $inventory_id = Donation::findOrFail($id)->product_id;
-            $inventoryQuantity = Inventory::where('id',$inventory_id)->first()->quantity - Donation::findOrFail($id)->quantity;
+            $inventoryQuantity = Inventory::where('id',$inventory_id)->first()->quantity - Donation::findOrFail($id)->amount;
             $data = [
                 'product_id' => $inventory_id,
                 'quantity' => $inventoryQuantity

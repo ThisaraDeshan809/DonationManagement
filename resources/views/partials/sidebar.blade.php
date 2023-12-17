@@ -10,7 +10,7 @@
                 Apps
             </li>
             <li class="active-page">
-                <a href="index.html" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
+                <a href="{{route('Dashboard')}}" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="material-icons">apps</i>Donators<i class="material-icons has-sub-menu">add</i></a>
@@ -36,9 +36,6 @@
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">Create New</a>
-                    </li>
-                    <li>
                         <a href="">Manage Issuers</a>
                     </li>
                 </ul>
@@ -51,7 +48,7 @@
                         <a href="{{route('Issue.New')}}">Create New</a>
                     </li>
                     <li>
-                        <a href="">Manage Issues</a>
+                        <a href="{{route('Issue.Index')}}">Manage Issues</a>
                     </li>
                 </ul>
             </li>
@@ -60,10 +57,10 @@
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">Create New</a>
+                        <a href="{{route('Product.New')}}">Create New</a>
                     </li>
                     <li>
-                        <a href="">Manage Products</a>
+                        <a href="{{route('Product.Index')}}">Manage Products</a>
                     </li>
                 </ul>
             </li>
@@ -72,10 +69,7 @@
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">Create New</a>
-                    </li>
-                    <li>
-                        <a href="">Manage Inventory</a>
+                        <a href="{{route('Inventory.Index')}}">View Inventory</a>
                     </li>
                 </ul>
             </li>

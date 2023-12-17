@@ -3,7 +3,9 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\DonatorController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\IssueController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +28,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('login','loginView')->name('login.View');
     Route::post('register','register')->name('Register');
     Route::get('register','registerView')->name('Register.View');
+    Route::get('dashboard','home')->name('Dashboard')->middleware('auth:api');
 });
 
 Route::controller(DonationController::class)->group(function() {
@@ -44,4 +47,22 @@ Route::controller(DonatorController::class)->group(function() {
 
 Route::controller(IssueController::class)->group(function () {
     Route::get('NewIssue','newIssueView')->name('Issue.New');
+    Route::get('IssueIndex','index')->name('Issue.Index');
+    Route::post('IssueStore','store')->name('Issue.Store');
+    Route::get('IssueUpdate/{id}','updateView')->name('Issue.Update.View');
+    Route::post('IssueUpdate/{id}','update')->name('Issue.Update');
+    Route::get('IsuueDelete/{id}','delete')->name('Issue.Delete');
+});
+
+Route::controller(ProductController::class)->group(function () {
+    Route::get('NewProduct','newProductView')->name('Product.New');
+    Route::get('ProductIndex','index')->name('Product.Index');
+    Route::post('ProductStore','store')->name('Product.Store');
+    Route::get('ProductUpdate/{id}','updateView')->name('Product.Update.View');
+    Route::post('ProductUpdate/{id}','update')->name('Product.Update');
+    Route::get('ProductDelete/{id}','delete')->name('Product.Delete');
+});
+
+Route::controller(InventoryController::class)->group(function() {
+    Route::get('InventoryIndex','index')->name('Inventory.Index');
 });

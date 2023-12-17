@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
+    public function home()
+    {
+        return view('pages.home');
+    }
+
     public function loginView()
     {
         return view('pages.auth.login');
