@@ -21,15 +21,15 @@
                         <form method="POST" action="{{ route('Donation.update',$donation->id) }}">
                             @csrf
                             <div class="form-group row">
-                                <label for="user_id" class="col-md-4 col-form-label text-md-right">Donate From</label>
+                                <label for="donator_id" class="col-md-4 col-form-label text-md-right">Donate From</label>
                                 <div class="col-md-6">
-                                    <select id="user_id" class="form-select form-control" data-allow-clear="true" name="user_id" required>
-                                        @foreach ($users as $user)
-                                            <option value="{{ $user->id }}">{{ $user->email }}</option>
+                                    <select id="donator_id" class="form-select form-control" data-allow-clear="true" name="donator_id" required>
+                                        @foreach ($donators as $donator)
+                                            <option value="{{ $donator->id }}">{{ $donator->email }}</option>
                                         @endforeach
                                     </select>
-                                    @if ($errors->has('user_id'))
-                                        <span class="text-danger text-left">{{ $errors->first('user_id') }}</span>
+                                    @if ($errors->has('donator_id'))
+                                        <span class="text-danger text-left">{{ $errors->first('donator_id') }}</span>
                                     @endif
                                     <div class="invalid-feedback">
                                         Donate From field is required

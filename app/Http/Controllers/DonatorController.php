@@ -13,6 +13,8 @@ class DonatorController extends Controller
         return view('pages.Donator2.index', compact('donators'));
     }
 
+
+
     public function delete($id)
     {
         try {

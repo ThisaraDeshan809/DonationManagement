@@ -18,9 +18,9 @@ class Donation extends Model
         'donation_time'
     ];
 
-    public function Users()
+    public function Donators()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(Donator::class,'donator_id');
     }
 
     public function Products()

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\DonatorController;
+use App\Http\Controllers\IssueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/', function () {
 });
 Route::controller(AuthController::class)->group(function () {
     Route::post('/login','login')->name('login');
+    Route::get('/logout','logout')->name('logout');
     Route::get('login','loginView')->name('login.View');
     Route::post('register','register')->name('Register');
     Route::get('register','registerView')->name('Register.View');
@@ -38,4 +40,8 @@ Route::controller(DonationController::class)->group(function() {
 Route::controller(DonatorController::class)->group(function() {
     Route::get('index','index')->name('Donator.index');
     Route::get('DonatorDelete/{id}','delete')->name('Donator.delete');
+});
+
+Route::controller(IssueController::class)->group(function () {
+    Route::get('NewIssue','newIssueView')->name('Issue.New');
 });

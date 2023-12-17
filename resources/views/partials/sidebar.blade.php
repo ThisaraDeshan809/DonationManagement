@@ -48,7 +48,7 @@
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">Create New</a>
+                        <a href="{{route('Issue.New')}}">Create New</a>
                     </li>
                     <li>
                         <a href="">Manage Issues</a>

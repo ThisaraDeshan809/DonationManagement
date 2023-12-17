@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('donator_id');
             $table->integer('amount');
             $table->string('donation_time');
             $table->timestamps();

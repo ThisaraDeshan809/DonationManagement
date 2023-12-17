@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
+use App\Models\Donator;
+use App\Models\Issuer;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -37,11 +39,11 @@ class AuthController extends Controller
                     Session::flash('success', 'Successfully logged in');
                     return view('pages.home');
                 } elseif($user->role_id == 2) {
-                    Session::flash('success', 'Successfully logged in');
-                    return view('pages.home');
+                    Session::flash('success', 'You Are a Donator...Please Contact Administrator');
+                    return redirect()->back();
                 } else {
-                    Session::flash('success', 'Successfully logged in');
-                    return view('pages.home');
+                    Session::flash('success', 'You Are a Issuer...Please Contact Administrator');
+                    return redirect()->back();
                 }
 
             }
@@ -65,10 +67,36 @@ class AuthController extends Controller
                 'email'=> $request->input('email'),
                 'password' => Hash::make($request->input('password'))
             ]);
-            if ($result) {
-                session()->flash('success', 'User registration successful');
-                return view('pages.home');
+            if($request->role == 1)
+            {
+                if ($result) {
+                    session()->flash('success', 'User registration successful');
+                    return view('pages.auth.login');
+                }
+            } elseif($request->role == 2) {
+                $result2 = Donator::create([
+                    'user_id' => $result->id,
+                    'first_name' => $request->input('first_name'),
+                    'last_name'=> $request->input('last_name'),
+                    'email'=> $request->input('email'),
+                ]);
+                if ($result2) {
+                    session()->flash('success', 'Donator registration successful');
+                    return redirect()->back();
+                }
+            } else {
+                $result3 = Issuer::create([
+                    'user_id' => $result->id,
+                    'first_name' => $request->input('first_name'),
+                    'last_name'=> $request->input('last_name'),
+                    'email'=> $request->input('email'),
+                ]);
+                if ($result3) {
+                    session()->flash('success', 'Donator registration successful');
+                    return redirect()->back();
+                }
             }
+
             session()->flash('fail', 'User registration failed');
             return redirect()->back();
 
@@ -77,5 +105,18 @@ class AuthController extends Controller
                 'message'=> 'Error'. $e->getMessage()
             ],400);
         }
+    }
+
+    public function logout()
+    {
+        $user = Auth::user();
+        if ($user) {
+            $user->tokens->each(function ($token) {
+                $token->delete();
+            });
+        }
+        Auth::logout();
+        session()->flash('success', 'User Logout successful');
+        return view('pages.auth.login');
     }
 }

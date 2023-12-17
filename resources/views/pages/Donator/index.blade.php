@@ -19,7 +19,7 @@
                     <tbody>
                         @foreach ($donations as $donation )
                         <tr>
-                            <td>{{$donation->Users->first_name}}</td>
+                            <td>{{$donation->Donators->first_name}}</td>
                             <td>{{$donation->Products->name}}</td>
                             <td>{{$donation->amount}}</td>
                             <td>

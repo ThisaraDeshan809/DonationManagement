@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('issues', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('issuer_id');
+            $table->unsignedBigInteger('product_id');
+            $table->integer('amount');
             $table->string('issue_date');
             $table->timestamps();
         });

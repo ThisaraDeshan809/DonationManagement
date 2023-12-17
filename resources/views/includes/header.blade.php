@@ -21,7 +21,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     @auth
-                        <a class="dropdown-item" href="">Log out</a>
+                        <a class="dropdown-item" href="{{route('logout')}}">Log out</a>
                     @endauth
                 </div>
             </li>
