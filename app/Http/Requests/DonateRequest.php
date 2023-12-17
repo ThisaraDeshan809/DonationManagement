@@ -22,9 +22,9 @@ class DonateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required',
-            'project_id' => 'required',
-            'amount' => 'required',
+            'donator_id' => 'required',
+            'product_id' => 'required',
+            'amount' => 'required|max:300',
             'date' => 'required',
         ];
     }
