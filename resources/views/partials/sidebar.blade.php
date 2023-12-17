@@ -57,10 +57,10 @@
                         class="material-icons has-sub-menu">add</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="">Create New</a>
+                        <a href="{{route('Product.New')}}">Create New</a>
                     </li>
                     <li>
-                        <a href="">Manage Products</a>
+                        <a href="{{route('Product.Index')}}">Manage Products</a>
                     </li>
                 </ul>
             </li>
