@@ -1,0 +1,13 @@
+#box{padding:8px 2px;border:1px solid #CCCCCC;display:block}
+#box input,#box input:active,#box input:focus{border:none;background:none;outline:none}
+#box ul,#box li,#box input{margin:0;padding:0}
+#box ul,#box li{list-style:none}
+#box li,#box a{display:inline-block;margin:2px}
+#box span{background-color:#EDEDED;padding:3px;color:#666666;border:1px solid #CCCCCC}
+#box a{font-size:12px;line-height:12px;color:#666666;text-decoration:none;padding:1px 3px;margin-left:5px;font-weight:bold;background-color:#FFFFFF;vertical-align:top;border:1px solid #CCCCCC;margin-top:-1px}
+#box a:hover{background-color:#666666;color:#FFFFFF}
+
+/* why not? */
+body{font-family:sans-serif}
+#box span{border-radius:5px}
+#box a{border-radius:100%;overflow:hidden}
